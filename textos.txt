@@ -78,3 +78,29 @@ A: Robin decide llevar el asedio, Con valentía y habilidad, lidera a su pueblo,
 pero el pueblo continua y logra salir victorioso, robin muere. (final 3)
 B: robin decide esperar a pesar de lo que conlleva, pero consigue emboscar con exito al 
 principe durante uno de sus viajes y finalmente acabar con el regimen de terror, robin vive.( final 4)
+
+
+
+
+¡Bienvenido a la Aventura Gráfica!
+
+Gracias por unirte a nuestra emocionante Aventura Gráfica. Este juego ha sido creado con pasión y 
+dedicación por nuestro talentoso equipo. ¡Esperamos que disfrutes cada momento y que vivas una 
+experiencia única llena de sorpresas!
+
+Equipo de Desarrollo:
+----------------------
+
+**Líder del Proyecto:**
+Alejandro Veliz
+
+**Diseñadores :**
+Alejandro Veliz
+
+**Desarrolladores :**
+Alejandro Veliz
+
+**Guionista:**
+Alejandro Veliz
+
+Presiona "Comenzar" para sumergirte en la historia

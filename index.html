@@ -30,6 +30,7 @@
     let textos = [];
     let juego;
     let cuadro;
+    let bit1;
 
     function preload() {
       // Carga el archivo de texto al inicio del programa
@@ -40,6 +41,7 @@
     function setup() {
       createCanvas(1280, 900);
       let cuadro = loadImage('cuadroDiana.png');
+      let bit1 = loadImage('cuadroDiana.png');
       juego = new miniJuego(cuadro);
       Aventura = new AventuraGrafica();
     }
@@ -81,67 +83,71 @@
       constructor() {
         this.estado = 0;
         this.pantallas = [
+          new Pantalla("Pantalla Inicial", "fondoweb.jpg", [
+            new BotonSiguiente(1280 / 2, 700, "Comenzar", 1),
+            new BotonSiguiente(1100, 700, "Bitacora", 24),
+          ], 84, 108),
           new Pantalla("Menú Principal", "menu.png", [
-            new BotonSiguiente(1280 / 2, 700, "Jugar", 1),
+            new BotonSiguiente(1280 / 2, 700, "Jugar", 2),
           ]),
           new Pantalla("", "P1.jpeg", [
-            new BotonesDobles(1280 / 2, 720 - 50, 2, 3),
+            new BotonesDobles(1280 / 2, 720 - 50, 3, 4),
           ], 0, 8),
           new Pantalla("Pantalla 2", "P2.jpeg", [
-            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 4),
+            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 5),
           ], 8, 10),
           new Pantalla("Pantalla 3", "P3.jpeg", [
-            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 4),
+            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 5),
           ], 10, 12),
           new Pantalla("", "P4.jpg", [
-            new BotonesDobles(1280 / 2, 720 - 50, 5, 6),
+            new BotonesDobles(1280 / 2, 720 - 50, 6, 7),
           ], 12, 19),
           new Pantalla("Pantalla 5", "P5.jpg", [
-            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 7),
+            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 8),
           ], 19, 21),
           new Pantalla("Pantalla 6", "P6.jpg", [
-            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 7),
+            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 8),
           ], 21, 23),
           new Pantalla("", "P7.jpg", [
-            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 8),
+            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 9),
           ], 23, 28),
           new Pantalla("", "", [
           ]),
           new Pantalla("Pantalla 9", "P8.jpg", [
-            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 11),
+            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 12),
           ], 28, 30),
           new Pantalla("Pantalla 10", "P9.jpg", [
-            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 11),
+            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 12),
           ], 30, 32),
           new Pantalla("Pantalla 11", "P10.jpg", [
-            new BotonesDobles(1280 / 2, 720 - 50, 12, 13),
+            new BotonesDobles(1280 / 2, 720 - 50, 13, 14),
           ], 33, 41),
           new Pantalla("Pantalla 12", "P11.jpg", [
             new BotonSiguiente(1280 / 2, 720 - 50, "presiona R para \nvolver a empezar", 0),
           ], 41, 43),
           new Pantalla("Pantalla 13", "P12.jpg", [
-            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 14),
+            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 15),
           ], 43, 45),
           new Pantalla("Pantalla 14", "P13.jpg", [
-            new BotonesDobles(1280 / 2, 720 - 50, 15, 16),
+            new BotonesDobles(1280 / 2, 720 - 50, 16, 17),
           ], 45, 53),
           new Pantalla("Pantalla 15", "P14.jpg", [
-            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 17),
+            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 18),
           ], 53, 54),
           new Pantalla("Pantalla 16", "P15.jpg", [
-            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 17),
+            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 18),
           ], 54, 56),
           new Pantalla("Pantalla 17", "P16.jpg", [
-            new BotonesDobles(1280 / 2, 720 - 50, 18, 19),
+            new BotonesDobles(1280 / 2, 720 - 50, 19, 20),
           ], 56, 64),
           new Pantalla("Pantalla 18", "P17.jpg", [
-            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 20),
+            new BotonSiguiente(1280 / 2, 720 - 50, "siguiente", 21),
           ], 64, 66),
           new Pantalla("Pantalla 19", "P18.jpg", [
             new BotonSiguiente(1280 / 2, 720 - 50, "presiona R para \nvolver a empezar", 0),
           ], 66, 68),
           new Pantalla("Pantalla 20", "P19.jpg", [
-            new BotonesDobles(1280 / 2, 720 - 50, 21, 22),
+            new BotonesDobles(1280 / 2, 720 - 50, 22, 23),
           ], 68, 76),
           new Pantalla("Pantalla 21", "P20.jpg", [
             new BotonSiguiente(1280 / 2, 720 - 50, "presiona R para \nvolver a empezar", 0),
@@ -149,11 +155,14 @@
           new Pantalla("Pantalla 22", "P21.jpg", [
             new BotonSiguiente(1280 / 2, 720 - 50, "presiona R para \nvolver a empezar", 0),
           ], 78, 80),
+          new Pantalla("Bitacora", "imagenBitacora.png", [
+            new BotonSiguiente(1280 / 2, 750, "volver", 0),
+          ], ),
         ];
       }
 
       actualizar() {
-        if (this.estado !== 8) {
+        if (this.estado !== 9) {
           // Aquí puedes colocar lógica adicional si es necesario para otros estados
         } else if (this.estado === juego && juego.estado === "menu") {
           juego.iniciar();
@@ -161,7 +170,7 @@
       }
 
       mostrar() {
-        if (this.estado !== 8) {
+        if (this.estado !== 9) {
           console.log("Estado de la pantalla:", this.estado);  // Agrega esta línea
           this.pantallas[this.estado].mostrar();
         } else {
@@ -170,7 +179,7 @@
       }
 
       mousePressed() {
-        if (this.estado !== 8) {
+        if (this.estado !== 9) {
           this.pantallas[this.estado].mousePressed();
         } else {
           juego.apuntar();
@@ -200,12 +209,13 @@
         let yImagen = (height - altoImagen) / 2;
 
         // Si la pantalla no es el Menú Principal, ajusta el tamaño de la imagen
-        if (this.nombre !== "Menú Principal") {
+        if (this.nombre !== "Menú Principal" && this.nombre !== "Bitacora") {
           anchoImagen *= 1;
           altoImagen *= 0.7;
         }
 
         image(this.img, 0, 0, anchoImagen, altoImagen);
+        
 
         // Muestra el texto correspondiente a la pantalla actual
         fill(0);
@@ -214,6 +224,13 @@
 
         let xTexto = 20;
         let yTexto = 475;
+
+        if (this.inicioTexto === 84 && this.finTexto === 108) {
+          fill(255, 120, 0)
+          textAlign(CENTER);
+          xTexto = width / 2;
+          yTexto = 25;
+        }
 
         for (let i = this.inicioTexto; i < this.finTexto; i++) {
           let anchoTexto = textWidth(textos[i]);
@@ -389,11 +406,11 @@
         this.tiempoRestante = max(this.tiempoMaximo * 1000 - tiempoTranscurrido, 0);
 
         if (this.tiempoRestante <= 0) {
-          Aventura.estado = 10;  // Cambia al estado de pantalla de perder
+          Aventura.estado = 11;  // Cambia al estado de pantalla de perder
         }
 
         if (this.puntos >= 1000) {
-          Aventura.estado = 9;  // Cambia al estado de pantalla de ganar
+          Aventura.estado = 10;  // Cambia al estado de pantalla de ganar
         }
 
         for (let i = 0; i < this.dianas.length; i++) {
